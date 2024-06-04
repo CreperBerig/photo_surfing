@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "949159400118",
+    "project_id": "photosurfing-8eca8",
+    "storage_bucket": "photosurfing-8eca8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:949159400118:android:937a8af54b5f3802970c17",
+        "android_client_info": {
+          "package_name": "com.example.photo_surfing"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPorDyXEcwvy8JELLWNgLPEQQkUUiSibE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
