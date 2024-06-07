@@ -15,4 +15,20 @@ class AuthRepository {
       throw Exception("Error signIn with email and password: ${e}");
     }
   }
+
+  Future<User?> signUp(String email, String password) async {
+    try {
+      UserCredential userCredential = await _auth.createUserWithEmailAndPassword(
+        email: email, password: password);
+      return userCredential.user;
+    } catch (e) {
+      throw Exception("Error signUp with email and password: ${e}");
+    }
+  }
+
+  Future<void> signOut() async {
+    await _auth.signOut();
+  }
+
+  Stream<User?> get user => _auth.authStateChanges();
 }

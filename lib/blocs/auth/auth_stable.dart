@@ -21,3 +21,5 @@ class AuthErrorState extends AuthState{
 }
 
 class AuthUnAuthenticatedState extends AuthState {}
+
+class AuthAuthenticatedState extends AuthState {}

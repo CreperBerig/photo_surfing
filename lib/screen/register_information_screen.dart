@@ -36,16 +36,33 @@ class InfoRegister extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  width: double.infinity,
-                  height: 128,
-                  decoration: BoxDecoration(
-                    color: Theme.of(context).colorScheme.secondaryContainer,
-                    borderRadius: BorderRadius.circular(16)
+                  height: 200,
+                  child: Stack(
+                    alignment: Alignment.topCenter,
+                    children: [
+                      Stack(
+                      clipBehavior: Clip.none,
+                      alignment: Alignment.bottomCenter,
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Theme.of(context).colorScheme.primaryContainer,
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          width: double.infinity,
+                          height: 128,
+                        ),
+                        Positioned(
+                          bottom: -50,
+                          child: CircleAvatar(
+                            backgroundColor: Theme.of(context).colorScheme.secondaryContainer,
+                            radius: 50,
+                          )
+                        ),
+                      ],
+                    ),
+                    ]
                   ),
-                ),
-                SizedBox(height: 5,),
-                CircleAvatar(
-                  radius: 40,
                 ),
                 SizedBox(height: 18,),
                 Row(

@@ -35,9 +35,7 @@ class CustomTextField extends StatelessWidget {
           filled: true,
           fillColor: Theme.of(context).colorScheme.primaryContainer,
           hintText: hintText,
-          hintStyle: TextStyle(
-            color: Theme.of(context).colorScheme.outline,
-          ),
+          hintStyle: Theme.of(context).textTheme.displayLarge
         ),
       ),
     );
