@@ -140,7 +140,7 @@ class AccountButton extends StatelessWidget {
       onTap: onTap,
       child: Container(
         width: double.infinity,
-        height: 40,
+        margin: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
         child: Row(
           children: [
             Icon(icon, color: Theme.of(context).colorScheme.tertiary, size: 24,),
