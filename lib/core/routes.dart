@@ -1,8 +1,8 @@
 import 'package:photo_surfing/screen/view.dart';
 
 final routes = {
-  '/': (context) => Login(),
-  '/register_page': (context) => Register(),
-  '/register_information_page': (context) => InfoRegister(),
-  '/main_page': (context) => MainScreen(),
+  '/login_screen': (context) => LoginScreen(),
+  '/register_screen': (context) => RegisterScreen(),
+  '/main_screen': (context) => MainScreen(),
+  '/continue_register_screen': (context) => ContinueRegisterScreen(),
 };

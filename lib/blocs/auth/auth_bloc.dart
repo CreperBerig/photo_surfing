@@ -8,34 +8,46 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final AuthRepository _authRepository = AuthRepository();
 
   AuthBloc() : super(AuthInitialState()) {
-    on<AuthSignInEvent>((event, emit) {
+    // Обработчик события входа
+    on<AuthSignInEvent>((event, emit) async {
       emit(AuthLoadingState());
       try {
-        _authRepository.signIn(event.email, event.password);
-        emit(AuthAuthenticatedState());
-      } catch(e) {
+        await _authRepository.signIn(event.email, event.password);
+        emit(AuthAuthenticatedState(event.email));
+      } catch (e) {
         emit(AuthErrorState(e.toString()));
       }
     });
 
-    on<AuthSignUpEvent>((event, emit) {
+    // Обработчик события регистрации
+    on<AuthSignUpEvent>((event, emit) async {
       emit(AuthLoadingState());
       try {
-        _authRepository.signUp(event.email, event.password);
-        emit(AuthAuthenticatedState());
-      } catch(e) {
+        await _authRepository.signUp(event.email, event.password, event.login, event.description);
+        emit(AuthAuthenticatedState(event.email));
+      } catch (e) {
         emit(AuthErrorState(e.toString()));
       }
     });
 
-    on<AuthSignOutEvent>((event, emit) {
+    // Обработчик события выхода
+    on<AuthSignOutEvent>((event, emit) async {
       emit(AuthLoadingState());
       try {
-        _authRepository.signOut();
-        emit(AuthUnAuthenticatedState());
-      } catch(e) {
+        await _authRepository.signOut();
+        emit(AuthUnauthenticatedState());
+      } catch (e) {
         emit(AuthErrorState(e.toString()));
       }
+    });
+
+    //обработчик события добавления аватара
+    on<AuthAvatarEvent>((event, emit) {
+      emit(AuthAvatarState(event.avatarPath));
+    });
+
+    on<AuthHeaderEvent>((event, emit) {
+      emit(AuthHeaderState(event.headerPath));
     });
   }
 }

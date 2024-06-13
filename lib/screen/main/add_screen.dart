@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class PhotoFeedScreen extends StatelessWidget {
-  const PhotoFeedScreen({super.key});
+class AddPage extends StatelessWidget {
+  const AddPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +11,7 @@ class PhotoFeedScreen extends StatelessWidget {
         centerTitle: true,
         automaticallyImplyLeading: false,
         title: Text(
-          'Photo feed',
+          'Add photo',
           style: Theme.of(context).textTheme.titleMedium,
         ),
       ),

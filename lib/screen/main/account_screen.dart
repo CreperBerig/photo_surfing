@@ -1,10 +1,15 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:photo_surfing/repositores/current_user.dart';
 
 class AccountPage extends StatelessWidget {
   const AccountPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final FirebaseAuth _auth = FirebaseAuth.instance;
+    
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.background,
@@ -103,18 +108,18 @@ class AccountPage extends StatelessWidget {
                     Divider(color: Theme.of(context).colorScheme.secondaryContainer,),
                     SizedBox(height: 2,),
                     AccountButton(
-                      icon: Icons.settings_outlined, 
-                      text: "Settings", 
+                      icon: Icons.settings_outlined,
+                      text: "Settings",
                       onTap: () {},
                     ),
                     SizedBox(height: 2,),
                     Divider(color: Theme.of(context).colorScheme.secondaryContainer,),
                     SizedBox(height: 2,),
                     AccountButton(
-                      icon: Icons.logout, 
-                      text: "Log out", 
+                      icon: Icons.logout,
+                      text: "Log out",
                       onTap: () {
-                        Navigator.pushNamed(context, '/');
+                        
                       },
                     ),
                   ],

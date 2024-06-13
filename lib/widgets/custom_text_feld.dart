@@ -2,41 +2,33 @@ import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
   final String hintText;
-  final bool obscureText;
+  final bool isObscureText;
   final TextEditingController controller;
-
   const CustomTextField({
     super.key,
     required this.hintText,
-    required this.obscureText,
-    required this.controller
+    required this.isObscureText,
+    required this.controller,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 0),
+    return Container(
+      margin: EdgeInsets.only(bottom: 10),
+      decoration: BoxDecoration(
+        color: Theme.of(context).colorScheme.primaryContainer,
+        border: Border.all(color: Theme.of(context).colorScheme.outline),
+        borderRadius: BorderRadius.circular(12),
+      ),
       child: TextField(
         controller: controller,
-        obscureText: obscureText,
         decoration: InputDecoration(
-          enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(
-              color: Theme.of(context).colorScheme.outline,
-            ),
-            borderRadius: BorderRadius.circular(12),
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(
-              color: Theme.of(context).colorScheme.primary,
-            ),
-            borderRadius: BorderRadius.circular(12),
-          ),
-          filled: true,
-          fillColor: Theme.of(context).colorScheme.primaryContainer,
           hintText: hintText,
-          hintStyle: Theme.of(context).textTheme.displayLarge
+          hintStyle:Theme.of(context).textTheme.displayLarge,
+          border: InputBorder.none,
+          contentPadding: EdgeInsets.symmetric(horizontal: 12),
         ),
+        obscureText: isObscureText,
       ),
     );
   }

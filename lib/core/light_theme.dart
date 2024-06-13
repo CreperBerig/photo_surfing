@@ -73,5 +73,31 @@ final light_theme = ThemeData(
       fontWeight: FontWeight.w500,
       fontSize: 14
     ),
+  ),
+
+  tabBarTheme: TabBarTheme(
+    indicatorColor: Color.fromRGBO(0, 98, 255, 1),
+    labelPadding: EdgeInsets.all(6),
+    labelStyle: TextStyle(
+      fontSize: 20,
+      fontWeight: FontWeight.w500,
+      color: Color.fromRGBO(7, 7, 12, 1),
+    ),
+    unselectedLabelStyle: TextStyle(
+      fontSize: 20,
+      fontWeight: FontWeight.w500,
+      color: Color.fromRGBO(154, 154, 175, 1),
+    ),
+    indicatorSize: TabBarIndicatorSize.tab,
+  ),
+
+  searchBarTheme: SearchBarThemeData(
+    padding: MaterialStatePropertyAll(EdgeInsets.symmetric(vertical: 10, horizontal: 14)),
+    elevation: MaterialStatePropertyAll(0),
+    backgroundColor: MaterialStatePropertyAll(Color.fromRGBO(226, 226, 234, 1),),
+    hintStyle: MaterialStatePropertyAll(TextStyle(
+      fontWeight: FontWeight.w500,
+      color: Color.fromRGBO(154, 154, 175, 1),
+    )),
   )
 );

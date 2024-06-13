@@ -1,25 +1,40 @@
 part of 'auth_bloc.dart';
 
-abstract class AuthState{
+abstract class AuthState {
   const AuthState();
 }
 
+// Начальное состояние
 class AuthInitialState extends AuthState {}
 
+// Состояние загрузки чего-либо
 class AuthLoadingState extends AuthState {}
 
-class AuthSuccsesState extends AuthState {
+// Состояние, когда пользователь аутентифицирован
+class AuthAuthenticatedState extends AuthState {
   final String email;
 
-  AuthSuccsesState(this.email);
+  AuthAuthenticatedState(this.email);
 }
 
-class AuthErrorState extends AuthState{
-  final String massege;
+// Состояние ошибки
+class AuthErrorState extends AuthState {
+  final String message;
 
-  AuthErrorState(this.massege);
+  AuthErrorState(this.message);
 }
 
-class AuthUnAuthenticatedState extends AuthState {}
+// Состояние, когда пользователь не аутентифицирован
+class AuthUnauthenticatedState extends AuthState {}
 
-class AuthAuthenticatedState extends AuthState {}
+class AuthAvatarState extends AuthState {
+  final String avatarPath;
+
+  AuthAvatarState(this.avatarPath);
+}
+
+class AuthHeaderState extends AuthState {
+  final String headerPath;
+
+  AuthHeaderState(this.headerPath);
+}
